@@ -2,6 +2,46 @@
 <html>
 	<head>
 		<title>Test je inschattingsvermogen</title>
+		<style>
+		      body {
+			-webkit-animation: colorchange 20s infinite;
+			animation: colorchange 20s infinite;
+		      }
+		      @-webkit-keyframes colorchange {
+			0% {
+			  background: #8ebf42;
+			}
+			25% {
+			  background: #e6ebef;
+			}
+			50% {
+			  background: #1c87c9;
+			}
+			75% {
+			  background: #095484;
+			}
+			100% {
+			  background: #d0e2bc;
+			}
+		      }
+		      @keyframes colorchange {
+			0% {
+			  background: #8ebf42;
+			}
+			25% {
+			  background: #e6ebef;
+			}
+			50% {
+			  background: #1c87c9;
+			}
+			75% {
+			  background: #095484;
+			}
+			100% {
+			  background: #d0e2bc;
+			}
+		      }
+		</style>
 	</head>
 	<body>
 		<script>
@@ -17,7 +57,7 @@
 			if (deviation>0) {
 				suffix = " seconden boven.";
 			}
-			result.innerHTML = "Afwijking: "+deviation+"%<br />Je zat er "+devInSeconds+suffix;
+			result.innerHTML = "Afwijking: "+Math.abs(deviation)+"%<br />Je zat er "+devInSeconds+suffix;
 			//vergelijk, doe simpele 'analyse', geef klein feitje ("x procent nauwkeuriger als testgroep, y procent ernaast)
 
 		}
@@ -28,7 +68,7 @@
 		//console.log(randomValue);
 		setTimeout(getResults,randomValue);
 				</script>
-		<p class="text" id="result">Even wachten...</p>
+		<h3 class="text" id="result">Even wachten...</h3>
 	</body>
 </html>
 
